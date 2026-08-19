@@ -29,6 +29,7 @@ export function organizationSchema(): JsonLdObject {
     legalName: company.legalName,
     description: company.description,
     url: getSiteUrl(),
+    telephone: realString(company.phone),
     areaServed: company.serviceArea,
     knowsAbout: [
       "iPhone",

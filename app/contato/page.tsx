@@ -22,7 +22,7 @@ export default function ContatoPage() {
     <>
       <PageIntro
         title="Fale com a X1"
-        description="Escolha o WhatsApp para falar com a equipe ou visite uma das unidades em Sorocaba e Tatuí. Telefone, e-mail e horários entram nesta página assim que forem cadastrados em data/company.ts."
+        description="Escolha o WhatsApp para falar com a equipe ou visite uma das unidades em Sorocaba e Tatuí."
         breadcrumbs={[
           { name: "Início", path: ROUTES.home },
           { name: "Contato", path: ROUTES.contato },
@@ -55,7 +55,7 @@ export default function ContatoPage() {
               WhatsApp:{" "}
               {isPlaceholder(company.whatsapp)
                 ? "informe em NEXT_PUBLIC_WHATSAPP ou data/company.ts"
-                : company.whatsapp}
+                : company.phone}
             </li>
             <li>
               Telefone:{" "}

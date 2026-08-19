@@ -12,8 +12,8 @@ export const company: Company = {
   unitCount: 3,
   cities: ["Sorocaba", "Tatuí"],
   installmentsMax: 21,
-  phone: "PREENCHER_TELEFONE",
-  whatsapp: "PREENCHER_WHATSAPP",
+  phone: "(15) 99732-6538",
+  whatsapp: "5515997326538",
   email: "PREENCHER_EMAIL",
   hours: "PREENCHER_HORARIO",
   social: {
