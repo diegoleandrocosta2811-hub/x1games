@@ -18,6 +18,19 @@ export function getSiteUrl(): string {
   if (fromEnv) {
     return fromEnv.replace(/\/$/, "");
   }
+
+  const vercelProduction = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (vercelProduction) {
+    const host = vercelProduction.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    return `https://${host}`;
+  }
+
+  const vercelUrl = process.env.VERCEL_URL?.trim();
+  if (vercelUrl) {
+    const host = vercelUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    return `https://${host}`;
+  }
+
   return LOCAL_DEV_URL;
 }
 
