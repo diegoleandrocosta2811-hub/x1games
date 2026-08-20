@@ -71,4 +71,6 @@ export const PUBLIC_ROUTES: { path: RoutePath; changeFrequency: "weekly" | "mont
 
 export const OG_LOCALE = "pt_BR";
 
+export const OG_IMAGE_PATH = "/og-image.png";
+
 export const OG_IMAGE_ALT = `${SITE_NAME} — iPhones, games e eletrônicos em Sorocaba e Tatuí`;

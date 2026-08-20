@@ -3,6 +3,8 @@ import {
   DEFAULT_DESCRIPTION,
   DEFAULT_TITLE,
   getSiteUrl,
+  OG_IMAGE_ALT,
+  OG_IMAGE_PATH,
   OG_LOCALE,
   SITE_NAME,
   TITLE_TEMPLATE,
@@ -20,6 +22,14 @@ export function absoluteUrl(path: string): string {
   if (!path || path === "/") return base;
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
 }
+
+const sharedOpenGraphImage = {
+  url: OG_IMAGE_PATH,
+  width: 1200,
+  height: 630,
+  alt: OG_IMAGE_ALT,
+  type: "image/png",
+} as const;
 
 export function createPageMetadata({
   title,
@@ -42,11 +52,13 @@ export function createPageMetadata({
       siteName: SITE_NAME,
       locale: OG_LOCALE,
       type: "website",
+      images: [sharedOpenGraphImage],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [OG_IMAGE_PATH],
     },
     robots: noIndex
       ? { index: false, follow: false }
@@ -72,11 +84,13 @@ export const rootMetadata: Metadata = {
     locale: OG_LOCALE,
     type: "website",
     url: "/",
+    images: [sharedOpenGraphImage],
   },
   twitter: {
     card: "summary_large_image",
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
+    images: [OG_IMAGE_PATH],
   },
   robots: {
     index: true,
